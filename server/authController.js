@@ -14,6 +14,7 @@ module.exports = {
         let hash = bcrypt.hashSync(password, salt); 
         
         let [newUser] = await db.auth.register(firstName,lastName,email,profilePic,hash)
+        delete newUser.hash; 
         req.session.user = newUser; 
         res.status(201).send(req.session.user)
     },
@@ -30,6 +31,7 @@ module.exports = {
         if(!authenticated){ 
             return res.status(401).send('Incorrect Password')
         }
+        delete user.password; 
         req.session.user = user; 
         res.status(202).send(req.session.user)
     },

@@ -6,13 +6,17 @@ const Auth = (props) => {
     const [inputs, setInputs] = useState({email:'', password:''})
 
     const login = (email, password) => { 
+        
         axios.post('/auth/login',{email, password}).then(res => 
-            swal.fire({
+          {  swal.fire({
                 title: 'Welcome',
                 text: 'You have logged in', 
                 icon:'success',
                 confirmButtonText: 'OK'
             })
+            props.history.push('/')
+        }
+           
         )
         .catch(err =>{
             if(err.message ==='Request failed with status code 400'){

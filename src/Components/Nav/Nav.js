@@ -1,6 +1,5 @@
 import React from 'react';
-import axios from 'axios'; 
-
+import {withRouter} from 'react-router-dom'; 
 
 const Nav = (props) => { 
 
@@ -14,4 +13,4 @@ const Nav = (props) => {
         </div>
     )
 }
-export default Nav; 
+export default withRouter(Nav); 
