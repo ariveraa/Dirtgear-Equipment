@@ -11,10 +11,10 @@ const Profile = (props) => {
         axios.post('/api/profileInfo', {firstName,lastName,email,phoneNumber,address,zipCode}).then(res => props.history.push('/profile'))
     }
 
-    const{first_name,last_name,email,phone_number,address,city,zip_code} = profileInfo
+    const{first_name,last_name,email,phoneNumber,address,city,zipCode} = profileInfo
 
     return( 
-        // console.log(profileInfo),
+        console.log(profileInfo),
        
         <div className = 'profile'> 
             
@@ -26,15 +26,15 @@ const Profile = (props) => {
             <p>Email</p>
             <input type ='text' value = {email} onChange = {e=>setInfo({...profileInfo , email: e.target.value})} />
             <p>Phone Number</p>
-            <input type ='text' value = {phone_number} onChange = {e=>setInfo({...profileInfo , phone_number: e.target.value})} />
+            <input type ='text' value = {phoneNumber} onChange = {e=>setInfo({...profileInfo , phone_number: e.target.value})} />
             <p>Address</p>
             <input type ='text' value = {address} onChange = {e=>setInfo({...profileInfo , address: e.target.value})} />
             <p>City</p>
             <input type ='text' value = {city} onChange = {e=>setInfo({...profileInfo , city: e.target.value})} />
             <p>Zip Code </p>
-            <input type ='text' value = {zip_code} onChange = {e=>setInfo({...profileInfo , zip_code: e.target.value})} />
+            <input type ='text' value = {zipCode} onChange = {e=>setInfo({...profileInfo , zip_code: e.target.value})} />
             <p>User Id: {profileInfo.user_id}</p>
-            <button onClick = {() => saveChanges(first_name,last_name,email,phone_number,address,city,zip_code)}>Save Changes</button>
+            <button onClick = {() => saveChanges(first_name,last_name,email,phoneNumber,address,city,zipCode)}>Save Changes</button>
         </div>
     )
 }
