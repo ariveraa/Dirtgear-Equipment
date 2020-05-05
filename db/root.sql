@@ -36,3 +36,12 @@ create table dirtgear_zipcode(
     user_id  int references dirtgear_users(user_id), 
     zipcode varchar(20)
 );
+
+create table dirtgear_listings( 
+    listing_id serial primary key, 
+    user_id int references dirtgear_users(user_id),
+    make varchar(200), 
+    model varchar(200), 
+    hours varchar(7), 
+    description varchar(2000)
+);

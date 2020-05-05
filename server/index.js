@@ -6,6 +6,7 @@ const express = require('express'),
     {SESSION_SECRET,CONNECTION_STRING,SERVER_PORT} = process.env, 
     authCtrl = require('./authController'), 
     profileCtrl = require('./profileController'),
+    listingCtrl = require('./listingController'), 
     app = express();
 
 app.use(express.json()); 
@@ -35,4 +36,7 @@ app.post('/auth/logout', authCtrl.logout);
 //profile endpoints
 app.get('/api/user', profileCtrl.getProfile); 
 app.post('/api/profileInfo', profileCtrl.saveChanges)
+
+// Listing endpoints
+app.get('api/listings', listingCtrl.getListings)
 
