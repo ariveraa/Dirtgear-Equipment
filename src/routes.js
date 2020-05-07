@@ -5,6 +5,8 @@ import Auth from './Components/Auth/Auth';
 import Registration from './Components/Registration/Registration';
 import Profile from './Components/Profile/Profile'; 
 import Equipment from './Components/Listings/Listings'; 
+import ListingForm from './Components/ListingForm/ListingForm'; 
+import MyListings from './Components/MyListings/MyListings';
 
 
 export default(
@@ -14,5 +16,7 @@ export default(
         <Route path = '/registration' component = {Registration} />
         <Route path = '/profile' component = {Profile} />
         <Route path = '/equipment' component = {Equipment} /> 
+        <Route path = '/myequipment' component = {MyListings} /> 
+        <Route path = '/newequipment' component = {ListingForm} />
     </Switch>
 )
