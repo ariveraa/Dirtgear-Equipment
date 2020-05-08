@@ -1,7 +1,9 @@
 module.exports ={ 
     getListings: async(req,res) => { 
         const db = req.app.get('db'); 
-        let [listings] = await db.getListings(); 
+        let listings = await db.listings.get_listings(); 
+
+        console.log(listings)
 
         res.status(200).send(listings); 
     }, 
