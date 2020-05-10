@@ -4,15 +4,7 @@ import useGetCall from '../../hooks/useGetCall';
 
 const Listings = (props) => { 
 
-    // const [postedEquipment, setEquipment] = useState('');
-
     let [postedEquipment] = useGetCall('/api/listings')
-
-
-    // useEffect(() => {axios.get('/api/listings').then(res => setEquipment(res.data))}, [])
-    // console.log(postedEquipment)
-
-
 
     return(
         <div>
