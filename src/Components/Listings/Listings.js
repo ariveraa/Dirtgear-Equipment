@@ -10,7 +10,7 @@ const Listings = (props) => {
         <div>
             {postedEquipment.map((e,index) => {
                 return(
-                console.log(e), 
+                // console.log(e), 
                 <div className = 'equipment-container' 
                 key = {index}
                 onClick={() => props.history.push(`/equipmentlisting/${e.listing_id}`)}

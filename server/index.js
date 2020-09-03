@@ -58,7 +58,6 @@ app.get('/api/signs3', (req,res) => {
 })
 
 // auth endpoints
-
 app.post('/auth/register',authCtrl.register); 
 app.post('/auth/login', authCtrl.login); 
 app.post('/auth/logout', authCtrl.logout);
@@ -69,5 +68,7 @@ app.post('/api/profileInfo', profileCtrl.saveChanges)
 
 // Listing endpoints
 app.get('/api/listings', listingCtrl.getListings)
+app.get('/api/equipmentlisting/:id',listingCtrl.getEquipmentListing)
 app.post('/api/listings', listingCtrl.postEquipment)
+
 
