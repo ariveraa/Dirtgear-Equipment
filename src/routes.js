@@ -7,6 +7,7 @@ import Profile from './Components/Profile/Profile';
 import Equipment from './Components/Listings/Listings'; 
 import ListingForm from './Components/ListingForm/ListingForm'; 
 import MyListings from './Components/MyListings/MyListings';
+import EquipmentListing from './Components/EquipmentListing/EquipmentListing';
 
 
 export default(
@@ -18,5 +19,6 @@ export default(
         <Route path = '/equipment' component = {Equipment} /> 
         <Route path = '/myequipment' component = {MyListings} /> 
         <Route path = '/newequipment' component = {ListingForm} />
+        <Route path = '/equipmentlisting/:id' component ={EquipmentListing} />
     </Switch>
 )

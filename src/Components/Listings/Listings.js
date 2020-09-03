@@ -11,7 +11,11 @@ const Listings = (props) => {
             {postedEquipment.map((e,index) => {
                 return(
                 console.log(e), 
-                <div className = 'equipment-container' key = {index}> 
+                <div className = 'equipment-container' 
+                key = {index}
+                onClick={() => props.history.push(`/equipmentlisting/${e.listing_id}`)}
+                > 
+                <h1>in here</h1>
                     <h2>{e.make}</h2>
                     <h2>{e.model} </h2>
                     <p> {e.hours} </p>
