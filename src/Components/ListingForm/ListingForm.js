@@ -9,7 +9,7 @@ const ListingForm = (props) => {
 
     const [inputs , setInput] = useState({make: '', model: '', hours: '', description: ''}); 
     const[isUploading, setUploading] = useState(false); 
-    const [Picture, setPicture] = useState(''); 
+    const [picture, setPicture] = useState(''); 
 
     const postEquipment = () => { 
         const {make, model, hours, description} = inputs; 
@@ -68,6 +68,19 @@ const ListingForm = (props) => {
 
 return ( 
     <div> 
+                    {picture ? (
+                            <img className='new-vehicle-pic' src={null || picture} />
+                        ) : (
+                            <Dropzone onDropAccepted = {(file) => getSignedRequest(file)} accept = 'image/*' multiple= {false} >
+                                {({getRootProps, getInputProps}) => (
+                                <div  className='dropzone-btn' id='upload-vehicle-pic-btn' {...getRootProps()}>
+                                <input {...getInputProps()} />
+                                    {isUploading ? <span>Loading...</span> : 
+                                    <span>Upload Vehicle Pic</span>}
+                                </div>
+                            )}
+                        </Dropzone>
+                        )}
         <p>Make:</p>
         <input onChange ={(e) => setInput({...inputs, make: e.target.value})} /> 
         <p>Model:</p>

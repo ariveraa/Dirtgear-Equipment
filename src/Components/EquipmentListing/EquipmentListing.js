@@ -13,7 +13,7 @@ const EquipmentListing = (props) =>{
                                          description: res.data[0].description
 
                 })
-            })
+            }).catch(err => console.log(err))
     },[])
 
     const [mounting, handleMount] = useState({userId: '', make: '', model: '', hours: null, description: ''})

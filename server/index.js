@@ -26,7 +26,7 @@ massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
     console.log('db connected')
     app.listen(SERVER_PORT, () => console.log(`server running on ${SERVER_PORT}`));
-})
+}).catch(err => console.log(err))
 
 //s3 setup 
 app.get('/api/signs3', (req,res) => {

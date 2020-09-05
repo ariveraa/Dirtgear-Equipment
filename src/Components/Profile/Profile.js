@@ -5,7 +5,7 @@ const Profile = (props) => {
 
     const[profileInfo, setInfo] = useState({})
 
-    useEffect(() => {axios.get('/api/user').then(res => setInfo(res.data))},[])
+    useEffect(() => {axios.get('/api/user').then(res => setInfo(res.data)).catch(err => console.log(err))},[])
     
     const saveChanges = (firstName,lastName,email,phoneNumber, address, zipCode) => { 
         axios.post('/api/profileInfo', {firstName,lastName,email,phoneNumber,address,zipCode}).then(res => props.history.push('/profile'))
