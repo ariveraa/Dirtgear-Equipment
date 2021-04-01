@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios'; 
-import swal from 'sweetalert2'
+import swal from 'sweetalert2';
+import session from 'express-session';
 
 const Auth = (props) => { 
     const [inputs, setInputs] = useState({email:'', password:''})
@@ -14,6 +15,7 @@ const Auth = (props) => {
                 icon:'success',
                 confirmButtonText: 'OK'
             })
+            session.user = res.data.first_name 
             props.history.push('/')
         }
            
