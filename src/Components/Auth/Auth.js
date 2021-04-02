@@ -51,6 +51,7 @@ const Auth = (props) => {
             <input onChange = {e => setInputs({...inputs,password: e.target.value})} />
             <button onClick = {() => login(inputs.email,inputs.password)}>Sign In</button>
             <button>Cancel</button>
+            <div  onClick = {() => props.history.push('/registration')}>Not A Member Click Here To Register</div>
         </div>
     )
 }
