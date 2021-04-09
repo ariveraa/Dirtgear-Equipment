@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'; 
-import axios from 'axios'; 
+import './Listings.css'
 import useGetCall from '../../hooks/useGetCall'; 
 
 const Listings = (props) => { 
@@ -7,7 +7,7 @@ const Listings = (props) => {
     let [postedEquipment] = useGetCall('/api/listings')
 
     return(
-        <div>
+        <div id= 'listing-container'>
             {postedEquipment.map((e,index) => {
                 return(
                 // console.log(e), 
@@ -15,11 +15,9 @@ const Listings = (props) => {
                 key = {index}
                 onClick={() => props.history.push(`/equipmentlisting/${e.listing_id}`)}
                 > 
-                <h1>in here</h1>
-                    <h2>{e.make}</h2>
-                    <h2>{e.model} </h2>
-                    <p> {e.hours} </p>
-                    <p> {e.description} </p>
+                <h1>{e.make} {e.model}</h1>
+                    <p> Hours:{e.hours} </p>
+                    <p>{e.description} </p>
                 </div>
                 )
             })

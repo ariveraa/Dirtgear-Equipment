@@ -69,7 +69,9 @@ app.post('/api/profileInfo', profileCtrl.saveChanges)
 
 // Listing endpoints
 app.get('/api/listings', listingCtrl.getListings)
+app.get('/api/userlistings',listingCtrl.getUserListings)
 app.get('/api/equipmentlisting/:id',listingCtrl.getEquipmentListing)
 app.post('/api/listings', listingCtrl.postEquipment)
+
 
 

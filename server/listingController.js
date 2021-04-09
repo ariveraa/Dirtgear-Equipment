@@ -21,6 +21,12 @@ module.exports ={
         await db.listings.post_equipment(userId,make,model,hours,description)
 
        res.sendStatus(200)
+    }, 
+    getUserListings: async(req,res) => { 
+        const db = req.app.get('db');
+        const userId =req.session.user.user_id; 
+        let userListings = await db.listings.get_userlistings(userId)
+        res.status(200).send(userListings)
     }
     
 } 
